@@ -4,6 +4,8 @@
 
 ##### 示例：
 加密版: [https://musistudio.github.io/eresume/public/](https://musistudio.github.io/eresume/public/)
+
+
 解密版: [https://musistudio.github.io/eresume/public/?key=hr](https://musistudio.github.io/eresume/public/?key=hr)
 
 #### 1. 安装
@@ -11,7 +13,7 @@
 ```shell
 git clone https://github.com/musistudio/eresume.git
 cd eresume
-npm install # 会自动安装chomedriver，请国内优先使用cnpm安装
+npm install # 会自动安装chomedriver，请国内用户优先使用cnpm安装
 ```
 
 #### 2.配置
