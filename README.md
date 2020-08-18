@@ -2,6 +2,10 @@
 
 该工具可以一键生成web版和pdf版简历，同时支持信息加密，让制作简历更简单！
 
+##### 示例：
+加密版: [https://musistudio.github.io/eresume/public/](https://musistudio.github.io/eresume/public/)
+解密版: [https://musistudio.github.io/eresume/public/?key=hr](https://musistudio.github.io/eresume/public/?key=hr)
+
 #### 1. 安装
 
 ```shell
