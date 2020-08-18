@@ -101,3 +101,21 @@ module.exports = {
     }
 }
 ```
+
+#### 3. 编译
+
+```
+npm run build
+```
+
+#### 4. 预览
+
+```
+npm run server
+```
+
+#### 5. 发布
+
+```
+npm run deploy
+```
