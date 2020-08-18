@@ -1,0 +1,20 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js",
+    "deploy": "node deploy.js",
+    "server": "node server.js"
+  },
+  "author": "musi",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "dayjs": "^1.8.33",
+    "express": "^4.17.1",
+    "fs-extra": "^9.0.1",
+    "puppeteer": "^5.2.1"
+  }
+}

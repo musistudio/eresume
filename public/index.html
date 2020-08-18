@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>简历</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1981387_mat8p6mu9jd.css">
+    <script src="./js/config.js"></script>
+    <script src="./js/crypto-js.min.js"></script>
+</head>
+
+<body>
+    <div class="tools">
+        <div class="print" onclick="printer()">打印</div>
+        <div class="download">
+            <a href="./resume.pdf">下载PDF文件</a>
+        </div>
+    </div>
+    <div class="container" id="app">
+        <div class="name" u-if="user.name">{{user.name}}</div>
+        <div class="urls">
+            <div class="blog" u-if="user.blog">
+                <i class="iconfont icon-31chaolianjiefa-link-01"></i>
+                <a href="{{url:user.blog}}" target="_blank">{{user.blog}}</a>
+            </div>
+            <div class="github" u-if="user.github">
+                <i class="iconfont icon-huaban88"></i>
+                <a href="{{url:user.github}}" target="_blank">{{user.github}}</a>
+            </div>
+            <div class="phone" u-if="user.phone">
+                <i class="iconfont icon-Ioniconsiosphoneportrait"></i>
+                <a href="tel://{{user.phone}}">{{user.phone}}</a>
+            </div>
+            <div class="mail" u-if="user.email">
+                <i class="iconfont icon-Email"></i>
+                <a href="mailto://{{user.email}}">{{user.email}}</a>
+            </div>
+        </div>
+        <div class="address secondary" u-if="user.address">
+            <i class="iconfont icon-puregroupaddressicon"></i>
+            <span class="menu">现居地:</span> {{user.address}}
+        </div>
+        <div class="place secondary" u-if="user.native_place">
+            <i class="iconfont icon-FontAwesomeinfo"></i>
+            <span class="menu">籍 贯:</span> {{user.native_place}}
+        </div>
+
+        <div class="job" u-if="user.job">{{user.job}}</div>
+
+        <div class="introduce">
+            简介 <span class="secondary">{{user.introduce}}</span>
+        </div>
+        <div class="item edu" u-if="user.education.length">
+            <div class="title">
+                <i class="iconfont icon-edu"></i>
+                教育背景
+            </div>
+            <div class="content">
+                <div u-for="edu in user.education">
+                    {{edu.time}} <span class="secondary">{{edu.info}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="item skills" u-if="user.skills.length">
+            <div class="title">
+                <i class="iconfont icon-Listofissues"></i>
+                相关技能
+            </div>
+            <div class="content">
+                <div class="list" u-for="skill in user.skills">
+                    <div>{{skill.name}}:</div>
+                    <ol>
+                        <li u-for="data in skill.datas">
+                            {{data}}
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="item projects" u-if="user.projects.length">
+            <div class="title">
+                <i class="iconfont icon-code"></i>
+                实习/项目经历
+            </div>
+            <div class="content" u-for="project in user.projects">
+                <div class="time">
+                    <div class="start">{{project.start}}</div>
+                    <div class="end">{{project.end}}</div>
+                </div>
+                <div class="box">
+                    <div class="name">{{project.name}}</div>
+                    <div class="desc">{{project.description}}</div>
+                    <div class="li" u-for="list in project.lists">{{list}}</div>
+                    <div class="tags">
+                        <div class="tag" u-for="tag in project.tags">{{tag}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item hobby" u-if="user.hobbies.length">
+            <div class="title">
+                <i class="iconfont icon-icon-test1"></i>
+                兴趣爱好
+            </div>
+            <div class="content" u-for="hobby in user.hobbies">
+                {{hobby.type}}: <span class="secondary">{{hobby.content}}</span>
+            </div>
+        </div>
+        <div class="timestamp secondary">
+            (最近更新: {{user.updateAt}})
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
