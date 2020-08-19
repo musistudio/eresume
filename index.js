@@ -60,7 +60,7 @@ void async function () {
     await page.goto(`file://${__dirname}/public/index.html`);
     await page.pdf({path: `${path.join(__dirname, 'public', 'resume.pdf')}`, format: 'A4', margin: {top: '20px', bottom: '20px'}});
     console.log('正在生成未加密版pdf...');
-    await page.goto(`file://${__dirname}/public/index.html?key=lijinhui`);
+    await page.goto(`file://${__dirname}/public/index.html?key=${key}`);
     await page.pdf({path: `${path.join(__dirname, 'public', file + '.pdf')}`, format: 'A4', margin: {top: '20px', bottom: '20px'}});
     await page.close();
     await browser.close();
