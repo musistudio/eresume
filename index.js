@@ -44,7 +44,7 @@ void async function () {
     }
     let today = dayjs().format('YYYY-MM-DD');
     user.updateAt = today;
-    user.file = `${protect.encode(file)}.pdf`;
+    user.file = protect.encode(file);
 
     // 3. copy模板资源文件
     let templatePath = path.join(__dirname, 'template', template);

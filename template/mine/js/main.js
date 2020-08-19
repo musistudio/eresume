@@ -193,7 +193,7 @@ let query = parseQuery();
 let { key } = query;
 let protect = new Protect(key);
 if (key && protect.decode(user.file)) {
-    document.querySelector('.download').querySelector('a').href = protect.decode(user.file);
+    document.querySelector('.download').querySelector('a').href = `${protect.decode(user.file)}.pdf`;
 }
 new Handler(document.querySelector('#app'), user, key);
 if (navigator.webdriver) {
